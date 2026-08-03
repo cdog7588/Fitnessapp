@@ -1,0 +1,48 @@
+{
+  "project": {
+    "name": "fitnessapp",
+    "packageRoot": "com.example.fitnessapp",
+    "mission": "Help users plan smarter workouts and improve strength using structured training data and analytics.",
+    "status": "active-development"
+  },
+  "architecture": {
+    "framework": "Spring Boot 3",
+    "database": "MySQL",
+    "security": "JWT",
+    "layers": [
+      "controllers",
+      "services",
+      "repositories",
+      "models",
+      "dto"
+    ],
+    "introspection": {
+      "architectureEndpoint": "/architecture",
+      "manifestEndpoint": "/architecture/manifest"
+    }
+  },
+  "priorities": [
+    "Maintain stable API contracts",
+    "Improve workout recommendation quality",
+    "Strength progression analytics",
+    "Reliable persistence and entity mappings",
+    "Production-grade observability and tests"
+  ],
+  "constraints": [
+    "Preserve package root unless migration is explicit",
+    "Avoid breaking endpoint changes without versioning",
+    "Keep deterministic fallbacks for AI-assisted features"
+  ],
+  "agentGuidance": {
+    "preferredWorkStyle": "small-safe-incremental",
+    "requiredValidation": [
+      "maven-compile",
+      "diagnostics-clean"
+    ],
+    "avoid": [
+      "destructive schema edits without migration",
+      "silent API behavior changes",
+      "hard-coded environment secrets"
+    ]
+  }
+}

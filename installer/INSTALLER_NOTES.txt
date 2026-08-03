@@ -1,0 +1,8 @@
+FitnessApp installer package scaffold
+
+Contents:
+- build/Apps/FitnessApp.cmd
+- build/Apps/launch-fitnessapp.bat
+- build/Shortcuts/FitnessApp.lnk
+
+This is the foundation for a desktop installer package. To turn it into a real distributable installer, the next step is to wrap these files in an MSIX or Inno Setup project.
