@@ -1,0 +1,124 @@
+:root {
+  /* ── Background ── */
+  --color-bg-primary: #09090B;
+  --color-bg-secondary: #141416;
+  --color-bg-tertiary: #1D1D21;
+  --color-bg-quaternary: #27272D;
+  --color-surface-overlay: rgba(0, 0, 0, 0.6);
+
+  /* ── Border ── */
+  --color-border-default: #2A2A32;
+  --color-border-accent: #CCFF00;
+  --color-border-error: #FF3B30;
+  --color-border-black: #000000;
+
+  /* ── Text ── */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #9E9EA8;
+  --color-text-tertiary: #5F5F69;
+
+  /* ── Accent ── */
+  --color-accent-primary: #CCFF00;
+  --color-accent-data: #00E5FF;
+  --color-error: #FF3B30;
+  --color-success: #34C759;
+  --color-warning: #FFD60A;
+
+  /* ── Typography ── */
+  --font-display: 'Unbounded', sans-serif;
+  --font-body: 'Geist', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+
+  --type-display-size: 24px;
+  --type-display-weight: 900;
+
+  --type-heading-lg-size: 20px;
+  --type-heading-lg-weight: 800;
+
+  --type-heading-md-size: 16px;
+  --type-heading-md-weight: 800;
+
+  --type-heading-sm-size: 14px;
+  --type-heading-sm-weight: 800;
+
+  --type-heading-xs-size: 12px;
+  --type-heading-xs-weight: 800;
+
+  --type-body-md-size: 14px;
+  --type-body-md-weight: 500;
+
+  --type-body-sm-size: 13px;
+  --type-body-sm-weight: 400;
+
+  --type-body-semibold-size: 14px;
+  --type-body-semibold-weight: 600;
+
+  --type-body-bold-size: 14px;
+  --type-body-bold-weight: 700;
+
+  --type-mono-md-size: 14px;
+  --type-mono-sm-size: 13px;
+  --type-mono-xs-size: 11px;
+  --type-mono-xxs-size: 10px;
+  --type-mono-weight: 400;
+  --type-mono-bold-weight: 700;
+
+  /* ── Spacing ── */
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 14px;
+  --space-7: 16px;
+  --space-8: 20px;
+  --space-9: 24px;
+  --space-10: 28px;
+  --space-11: 32px;
+  --space-12: 40px;
+  --space-13: 64px;
+
+  /* ── Radius ── */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-default: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 18px;
+  --radius-full: 9999px;
+
+  /* ── Z-Index ── */
+  --z-base: 0;
+  --z-sidebar: 10;
+  --z-topbar: 20;
+  --z-sticky: 30;
+  --z-dropdown: 40;
+  --z-toast: 50;
+  --z-modal-backdrop: 60;
+  --z-modal: 70;
+  --z-tooltip: 80;
+
+  /* ── Layout ── */
+  --sidebar-width: 260px;
+  --topbar-height: 56px;
+  --bottom-tab-height: 56px;
+  --auth-card-width: 440px;
+
+  /* ── Transitions ── */
+  --transition-fast: 100ms ease;
+  --transition-default: 150ms ease;
+  --transition-medium: 200ms ease-in-out;
+  --transition-slow: 300ms ease-out;
+  --transition-skeleton: 1500ms ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-default: 0ms;
+    --transition-medium: 0ms;
+    --transition-slow: 0ms;
+    --transition-skeleton: 0ms;
+  }
+}
