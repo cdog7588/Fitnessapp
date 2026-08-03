@@ -49,6 +49,42 @@ For a desktop-style launch flow on Windows, use:
 
 This starts backend + frontend, waits for readiness, and opens an app-style browser window.
 
+## Download and Install (Windows)
+
+Use the installer executable in this repository:
+
+- `installer/FitnessAppSetup.exe`
+
+Install steps:
+
+1. Run `installer/FitnessAppSetup.exe` as Administrator.
+2. Complete the installer wizard.
+3. Launch **FitnessApp** from the Start Menu or desktop shortcut.
+
+What the installer includes:
+
+- App launchers and helper scripts from `scripts/`
+- A desktop shortcut for **FitnessApp**
+- A Start Menu shortcut for **FitnessApp Logs**
+
+## First-Run Behavior
+
+On first launch, FitnessApp:
+
+1. Starts backend and frontend services in the background.
+2. Waits for backend (`8100`) and frontend (`3000`) readiness.
+3. Opens the app window at `http://localhost:3000`.
+
+Logs are written to:
+
+- `%LOCALAPPDATA%\\FitnessApp\\logs`
+
+Useful log files:
+
+- `backend.log`
+- `frontend.log`
+- `launcher.log`
+
 ## Core API Areas
 
 - Auth: `/auth`
