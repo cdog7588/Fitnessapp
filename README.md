@@ -42,6 +42,11 @@ FitnessApp is a strength training intelligence platform with a Spring Boot backe
    - `npm install`
    - `npm run dev`
 
+If Git reports a `$GIT_DIR too big` error from this long Windows worktree, use
+`scripts/sync-git.ps1` for fetch, or `scripts/sync-git.ps1 -Push` to fetch and
+push the current branch. It performs network operations from the short primary
+checkout while preserving this working copy.
+
 Frontend runs on `http://localhost:3000` and proxies API requests to backend port `8100`.
 
 ## Desktop Launch
