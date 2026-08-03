@@ -26,7 +26,10 @@ FitnessApp is a strength training intelligence platform with a Spring Boot backe
 
 ## Local Setup
 
-1. Configure database connection in `src/main/resources/application.properties`.
+1. Set environment variables for the backend (do not commit these values):
+   - `DB_PASSWORD`: password for the MySQL account.
+   - `DB_USERNAME` (optional): defaults to `root`.
+   - `JWT_SECRET`: a private signing secret with at least 32 characters.
 2. Start MySQL and ensure the configured database exists.
 3. Run backend tests:
    - Windows: `./mvnw.cmd test`

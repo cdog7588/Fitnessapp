@@ -1,6 +1,7 @@
 package com.example.fitnessapp.security;
 
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.Mac;
@@ -16,11 +17,19 @@ import java.util.regex.Pattern;
 @Service
 public class JwtService {
 
-    private static final String SECRET = "fitness-app-secret-key-1234567890";
     private static final String HMAC_ALGORITHM = "HmacSHA256";
     private static final long EXPIRATION_MILLIS = 60L * 60L * 1000L;
     private static final Pattern SUBJECT_PATTERN = Pattern.compile("\"sub\":\"([^\"]+)\"");
     private static final Pattern EXPIRATION_PATTERN = Pattern.compile("\"exp\":([0-9]+)");
+
+    private final String secret;
+
+    public JwtService(@Value("${security.jwt.secret}") String secret) {
+        if (secret == null || secret.length() < 32) {
+            throw new IllegalStateException("security.jwt.secret must be at least 32 characters long");
+        }
+        this.secret = secret;
+    }
 
     public String generateToken(String username) {
         long now = System.currentTimeMillis();
@@ -66,7 +75,7 @@ public class JwtService {
     private byte[] sign(String input) {
         try {
             Mac mac = Mac.getInstance(HMAC_ALGORITHM);
-            SecretKeySpec secretKey = new SecretKeySpec(SECRET.getBytes(StandardCharsets.UTF_8), HMAC_ALGORITHM);
+            SecretKeySpec secretKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), HMAC_ALGORITHM);
             mac.init(secretKey);
             return mac.doFinal(input.getBytes(StandardCharsets.UTF_8));
         } catch (NoSuchAlgorithmException | InvalidKeyException e) {
